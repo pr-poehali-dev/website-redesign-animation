@@ -306,9 +306,23 @@ export default function Index() {
                 </div>
                 <span className="font-bold text-lg">НТМ-Москва</span>
               </div>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-400 mb-4">
                 Строительная компания полного цикла
               </p>
+              <div className="flex gap-3">
+                <a href="https://vk.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
+                  <Icon name="MessageCircle" size={20} />
+                </a>
+                <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
+                  <Icon name="Send" size={20} />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
+                  <Icon name="Youtube" size={20} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
+                  <Icon name="Instagram" size={20} />
+                </a>
+              </div>
             </div>
 
             <div>
