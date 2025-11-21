@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
@@ -169,6 +170,8 @@ export default function Team() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

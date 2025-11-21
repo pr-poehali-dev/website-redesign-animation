@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
@@ -176,6 +177,8 @@ export default function News() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

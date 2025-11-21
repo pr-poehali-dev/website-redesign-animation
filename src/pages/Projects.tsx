@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -178,6 +179,8 @@ export default function Projects() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

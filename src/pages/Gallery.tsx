@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
@@ -166,6 +167,8 @@ export default function Gallery() {
           )}
         </DialogContent>
       </Dialog>
+
+      <Footer />
     </div>
   );
 }
