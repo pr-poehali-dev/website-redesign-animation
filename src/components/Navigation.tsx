@@ -28,15 +28,15 @@ export default function Navigation() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect shadow-lg border-b border-primary/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
+            <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg">
               <span className="text-2xl font-bold text-white">НТМ</span>
             </div>
             <div className="hidden md:block">
-              <div className="text-xl font-bold text-secondary">НТМ-Москва</div>
+              <div className="text-xl font-bold text-gradient">НТМ-Москва</div>
               <div className="text-xs text-muted-foreground">Строительная компания</div>
             </div>
           </Link>
@@ -46,10 +46,10 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
                   location.pathname === item.path
-                    ? 'text-primary bg-primary/10'
-                    : 'text-secondary'
+                    ? 'text-white gradient-primary shadow-md'
+                    : 'text-secondary hover:bg-primary/10 hover:text-primary'
                 }`}
               >
                 {item.name}
@@ -58,8 +58,8 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Button variant="default" className="hidden md:flex gap-2">
-              <Icon name="Phone" size={18} />
+            <Button className="hidden md:flex gap-2 gradient-primary hover:scale-105 transition-all shadow-lg hover:shadow-xl group">
+              <Icon name="Phone" size={18} className="group-hover:rotate-12 transition-transform" />
               <span>Связаться</span>
             </Button>
 

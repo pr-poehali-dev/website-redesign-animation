@@ -105,25 +105,29 @@ export default function Index() {
       <Navigation />
 
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5"></div>
+        <div className="absolute inset-0 gradient-primary opacity-10"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <Badge className="mb-6 text-sm px-4 py-2">Надежность • Качество • Опыт</Badge>
-            <h1 className="text-5xl md:text-7xl font-bold text-secondary mb-6 leading-tight">
+            <Badge className="mb-6 text-sm px-6 py-3 animate-scale-in glass-effect border-primary/50">
+              ✨ Надежность • Качество • Опыт
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in">
               Строим будущее
-              <span className="block text-primary mt-2">вместе с вами</span>
+              <span className="block text-gradient mt-2 animate-slide-up">вместе с вами</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-up" style={{animationDelay: '0.2s'}}>
               Полный цикл строительных работ от проектирования до сдачи объекта. 
               25 лет опыта и более 500 успешных проектов.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
-                <Icon name="MessageCircle" className="mr-2" size={20} />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <Button size="lg" className="text-lg px-8 py-6 gradient-primary hover:scale-110 transition-all shadow-lg hover:shadow-2xl group">
+                <Icon name="MessageCircle" className="mr-2 group-hover:rotate-12 transition-transform" size={20} />
                 Обсудить проект
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
-                <Icon name="FileText" className="mr-2" size={20} />
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-110 transition-all border-2 border-primary/50 hover:bg-primary/10 group">
+                <Icon name="FileText" className="mr-2 group-hover:scale-110 transition-transform" size={20} />
                 Наши услуги
               </Button>
             </div>
@@ -133,17 +137,21 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden gradient-primary">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center animate-fade-in"
+                className="text-center animate-scale-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-sm md:text-base text-gray-300">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">{stat.value}</div>
+                <div className="text-sm md:text-base text-white/90">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -166,17 +174,18 @@ export default function Index() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer animate-scale-in"
+                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer animate-scale-in border-2 border-transparent hover:border-primary/30 relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader>
-                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                    <Icon name={service.icon as any} size={28} className="text-primary group-hover:text-white" />
+                <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                <CardHeader className="relative">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                    <Icon name={service.icon as any} size={32} className="text-primary group-hover:text-white transition-colors" />
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
+                <CardContent className="relative">
+                  <p className="text-muted-foreground group-hover:text-foreground transition-colors">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -200,11 +209,13 @@ export default function Index() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="overflow-hidden group hover:shadow-xl transition-all duration-300 cursor-pointer animate-slide-up"
+                className="overflow-hidden group hover:shadow-2xl transition-all duration-500 cursor-pointer animate-slide-up border-2 border-transparent hover:border-primary/20 relative"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                  <Icon name="Building" size={80} className="text-primary/40" />
+                <div className="h-64 gradient-primary relative flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <Icon name="Building" size={80} className="text-white/40 group-hover:scale-125 group-hover:rotate-3 transition-all duration-700 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
                 </div>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
