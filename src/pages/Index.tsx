@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -95,6 +96,7 @@ const reviews = [
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -105,32 +107,41 @@ export default function Index() {
       <Navigation />
 
       <section className="relative pt-32 pb-20 overflow-hidden mesh-gradient">
-        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-purple-500/30 to-pink-500/30"></div>
-        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-rotate-slow bg-gradient-to-br from-pink-500/10 to-blue-500/10"></div>
+        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-orange-500/20 to-yellow-500/20"></div>
+        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-slate-600/15 to-blue-600/15"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-rotate-slow bg-gradient-to-br from-amber-500/10 to-orange-600/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <Badge className="mb-8 text-sm px-8 py-4 animate-scale-in glass-effect border-primary/50 shadow-2xl hover:scale-105 transition-all cursor-default">
-              <Icon name="Sparkles" className="mr-2 animate-pulse" size={16} />
-              Надежность • Качество • Опыт
-              <Icon name="Sparkles" className="ml-2 animate-pulse" size={16} />
+            <Badge className="mb-8 text-sm px-8 py-4 animate-scale-in glass-effect border-primary/50 shadow-2xl hover:scale-105 transition-all cursor-default bg-gradient-to-r from-orange-50 to-amber-50">
+              <Icon name="HardHat" className="mr-2 text-primary" size={18} />
+              Профессиональное строительство с 1999 года
+              <Icon name="Award" className="ml-2 text-primary" size={18} />
             </Badge>
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in">
-              Строим будущее
-              <span className="block text-gradient mt-4 animate-slide-up animate-glow">вместе с вами</span>
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in text-secondary">
+              Строим объекты
+              <span className="block text-gradient mt-4 animate-slide-up">любой сложности</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up font-medium" style={{animationDelay: '0.2s'}}>
               Полный цикл строительных работ от проектирования до сдачи объекта. 
               <span className="text-primary font-bold">25 лет опыта</span> и более <span className="text-primary font-bold">500 успешных проектов</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <Button size="lg" className="text-lg px-10 py-7 gradient-primary hover:scale-110 transition-all shadow-2xl hover:shadow-purple-500/50 group animate-glow">
-                <Icon name="MessageCircle" className="mr-3 group-hover:rotate-12 transition-transform" size={24} />
+              <Button 
+                size="lg" 
+                className="text-lg px-10 py-7 gradient-primary hover:scale-110 transition-all shadow-2xl hover:shadow-orange-500/50 group animate-glow"
+                onClick={() => navigate('/contacts')}
+              >
+                <Icon name="Phone" className="mr-3 group-hover:rotate-12 transition-transform" size={24} />
                 Обсудить проект
                 <Icon name="ArrowRight" className="ml-3 group-hover:translate-x-2 transition-transform" size={20} />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-10 py-7 hover:scale-110 transition-all border-2 border-primary/50 hover:bg-primary/10 group backdrop-blur-sm">
-                <Icon name="FileText" className="mr-3 group-hover:scale-110 transition-transform" size={24} />
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-10 py-7 hover:scale-110 transition-all border-2 border-primary/50 hover:bg-primary/10 group backdrop-blur-sm"
+                onClick={() => navigate('/services')}
+              >
+                <Icon name="Briefcase" className="mr-3 group-hover:scale-110 transition-transform" size={24} />
                 Наши услуги
               </Button>
             </div>
@@ -183,6 +194,7 @@ export default function Index() {
                 key={index}
                 className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer animate-scale-in border-2 border-transparent hover:border-primary/30 relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => navigate('/services')}
               >
                 <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
                 <CardHeader className="relative">
@@ -193,6 +205,10 @@ export default function Index() {
                 </CardHeader>
                 <CardContent className="relative">
                   <p className="text-muted-foreground group-hover:text-foreground transition-colors">{service.description}</p>
+                  <div className="mt-4 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-sm font-semibold">Подробнее</span>
+                    <Icon name="ArrowRight" size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -218,6 +234,7 @@ export default function Index() {
                 key={index}
                 className="overflow-hidden group hover:shadow-2xl transition-all duration-500 cursor-pointer animate-slide-up border-2 border-transparent hover:border-primary/20 relative"
                 style={{ animationDelay: `${index * 0.15}s` }}
+                onClick={() => navigate('/projects')}
               >
                 <div className="h-64 gradient-primary relative flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-black/20"></div>

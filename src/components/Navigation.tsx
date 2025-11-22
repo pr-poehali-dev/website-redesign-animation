@@ -79,13 +79,14 @@ export default function Navigation() {
             </Button>
             
             <a 
-              href="https://t.me/+QgiLIa1gFRY4Y2Iy" 
+              href="https://t.me/stroitelstvo_ntm" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:scale-110 transition-all"
+              title="Наш Telegram-канал"
             >
               <Button variant="ghost" size="icon" className="relative group">
-                <Icon name="Send" size={20} className="text-[#0088cc] group-hover:rotate-12 transition-transform" />
+                <Icon name="Send" size={20} className="text-primary group-hover:rotate-12 transition-transform" />
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               </Button>
             </a>

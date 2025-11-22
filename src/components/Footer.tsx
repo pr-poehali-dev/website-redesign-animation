@@ -17,10 +17,11 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a 
-                href="https://t.me/+QgiLIa1gFRY4Y2Iy" 
+                href="https://t.me/stroitelstvo_ntm" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="relative w-12 h-12 gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-2xl group animate-glow"
+                title="Telegram-канал НТМ Строительство"
               >
                 <Icon name="Send" size={22} className="text-white group-hover:rotate-12 transition-transform" />
                 <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse border-2 border-secondary"></span>
@@ -35,11 +36,12 @@ export default function Footer() {
                 <Icon name="Instagram" size={22} />
               </a>
             </div>
-            <div className="mt-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
-              <div className="flex items-center gap-2 text-sm">
-                <Icon name="Users" size={16} className="text-primary" />
-                <span className="text-gray-300">Присоединяйтесь к нашему Telegram-каналу!</span>
+            <div className="mt-4 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl backdrop-blur-sm border border-primary/20">
+              <div className="flex items-center gap-2 text-sm mb-2">
+                <Icon name="TrendingUp" size={18} className="text-primary animate-bounce-slow" />
+                <span className="text-white font-semibold">Новости строительства</span>
               </div>
+              <p className="text-xs text-gray-300">Подпишитесь на наш Telegram — свежие проекты, технологии, вакансии</p>
             </div>
           </div>
 
