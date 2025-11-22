@@ -7,32 +7,32 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 24 20% 15%;
+    --foreground: 30 25% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 24 20% 15%;
+    --card-foreground: 30 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 24 20% 15%;
+    --popover-foreground: 30 25% 20%;
 
-    --primary: 24 82% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 30 35% 40%;
+    --primary-foreground: 45 100% 95%;
 
-    --secondary: 210 40% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 30 20% 25%;
+    --secondary-foreground: 45 100% 95%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 30 20% 96%;
+    --muted-foreground: 30 10% 50%;
 
-    --accent: 45 93% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 78% 65%;
+    --accent-foreground: 30 30% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 24 82% 50%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 42 78% 65%;
 
     --radius: 0.5rem;
 
@@ -237,10 +237,10 @@
   @keyframes pulse-glow {
     0%,
     100% {
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+      box-shadow: 0 0 20px rgba(217, 164, 109, 0.4);
     }
     50% {
-      box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+      box-shadow: 0 0 40px rgba(217, 164, 109, 0.8);
     }
   }
 
@@ -297,15 +297,15 @@
   @keyframes glow {
     from {
       box-shadow:
-        0 0 20px rgba(168, 85, 247, 0.5),
-        0 0 40px rgba(168, 85, 247, 0.3),
-        0 0 60px rgba(168, 85, 247, 0.2);
+        0 0 20px rgba(217, 164, 109, 0.5),
+        0 0 40px rgba(217, 164, 109, 0.3),
+        0 0 60px rgba(217, 164, 109, 0.2);
     }
     to {
       box-shadow:
-        0 0 30px rgba(236, 72, 153, 0.6),
-        0 0 60px rgba(236, 72, 153, 0.4),
-        0 0 90px rgba(236, 72, 153, 0.3);
+        0 0 30px rgba(242, 201, 76, 0.6),
+        0 0 60px rgba(242, 201, 76, 0.4),
+        0 0 90px rgba(242, 201, 76, 0.3);
     }
   }
 
@@ -327,31 +327,35 @@
     background:
       radial-gradient(
         at 27% 37%,
-        hsla(24, 82%, 50%, 0.15) 0px,
+        hsla(30, 35%, 40%, 0.12) 0px,
         transparent 50%
       ),
-      radial-gradient(at 97% 21%, hsla(45, 93%, 58%, 0.2) 0px, transparent 50%),
+      radial-gradient(
+        at 97% 21%,
+        hsla(42, 78%, 65%, 0.18) 0px,
+        transparent 50%
+      ),
       radial-gradient(
         at 52% 99%,
-        hsla(210, 40%, 50%, 0.15) 0px,
+        hsla(35, 40%, 50%, 0.12) 0px,
         transparent 50%
       ),
       radial-gradient(
         at 10% 29%,
-        hsla(35, 75%, 55%, 0.15) 0px,
+        hsla(38, 50%, 55%, 0.15) 0px,
         transparent 50%
       ),
       radial-gradient(
         at 97% 96%,
-        hsla(24, 60%, 45%, 0.15) 0px,
+        hsla(32, 45%, 45%, 0.12) 0px,
         transparent 50%
       ),
       radial-gradient(
         at 33% 50%,
-        hsla(200, 50%, 60%, 0.15) 0px,
+        hsla(40, 60%, 60%, 0.15) 0px,
         transparent 50%
       ),
-      radial-gradient(at 79% 53%, hsla(40, 80%, 60%, 0.15) 0px, transparent 50%);
+      radial-gradient(at 79% 53%, hsla(42, 70%, 62%, 0.15) 0px, transparent 50%);
   }
 
   .gradient-border {
