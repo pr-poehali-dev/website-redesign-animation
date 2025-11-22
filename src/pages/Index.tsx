@@ -119,9 +119,9 @@ export default function Index() {
             </Badge>
             <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in text-foreground">
               Строим объекты
-              <span className="block text-gradient mt-4 animate-slide-up">любой сложности</span>
+              <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-4 animate-slide-up">любой сложности</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up font-medium" style={{animationDelay: '0.2s'}}>
+            <p className="text-xl md:text-2xl text-foreground/70 mb-12 max-w-2xl mx-auto animate-slide-up font-medium" style={{animationDelay: '0.2s'}}>
               Полный цикл строительных работ от проектирования до сдачи объекта. 
               <span className="text-primary font-bold">25 лет опыта</span> и более <span className="text-primary font-bold">500 успешных проектов</span>.
             </p>
