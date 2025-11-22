@@ -145,6 +145,26 @@
     animation: rotate-slow 20s linear infinite;
   }
 
+  .animate-slide-in {
+    animation: slide-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -229,6 +249,62 @@
     }
   }
 
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.5),
+        0 0 40px rgba(168, 85, 247, 0.3),
+        0 0 60px rgba(168, 85, 247, 0.2);
+    }
+    to {
+      box-shadow:
+        0 0 30px rgba(236, 72, 153, 0.6),
+        0 0 60px rgba(236, 72, 153, 0.4),
+        0 0 90px rgba(236, 72, 153, 0.3);
+    }
+  }
+
   .gradient-primary {
     background: linear-gradient(
       135deg,
@@ -238,9 +314,54 @@
   }
 
   .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .mesh-gradient {
+    background:
+      radial-gradient(
+        at 27% 37%,
+        hsla(215, 98%, 61%, 0.3) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 97% 21%,
+        hsla(262, 83%, 58%, 0.4) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 52% 99%,
+        hsla(280, 100%, 70%, 0.3) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 10% 29%,
+        hsla(256, 96%, 67%, 0.3) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 97% 96%,
+        hsla(238, 100%, 70%, 0.3) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 33% 50%,
+        hsla(222, 67%, 73%, 0.3) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.3) 0px, transparent 50%);
+  }
+
+  .gradient-border {
+    border: 2px solid;
+    border-image: linear-gradient(
+        135deg,
+        hsl(var(--primary)),
+        hsl(var(--accent))
+      )
+      1;
   }
 
   .text-gradient {

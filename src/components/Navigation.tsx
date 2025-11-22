@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import Search from '@/components/Search';
 import {
   Sheet,
   SheetContent,
@@ -34,6 +35,7 @@ const navItems = [
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -66,7 +68,28 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="hover:scale-110 transition-all"
+              onClick={() => setSearchOpen(true)}
+            >
+              <Icon name="Search" size={20} />
+            </Button>
+            
+            <a 
+              href="https://t.me/+QgiLIa1gFRY4Y2Iy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-all"
+            >
+              <Button variant="ghost" size="icon" className="relative group">
+                <Icon name="Send" size={20} className="text-[#0088cc] group-hover:rotate-12 transition-transform" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              </Button>
+            </a>
+
             <Button className="hidden md:flex gap-2 gradient-primary hover:scale-105 transition-all shadow-lg hover:shadow-xl group">
               <Icon name="Phone" size={18} className="group-hover:rotate-12 transition-transform" />
               <span>Связаться</span>
@@ -100,6 +123,7 @@ export default function Navigation() {
           </div>
         </div>
       </div>
+      <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </nav>
   );
 }

@@ -104,30 +104,33 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 gradient-primary opacity-10"></div>
-        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse-glow"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+      <section className="relative pt-32 pb-20 overflow-hidden mesh-gradient">
+        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-purple-500/30 to-pink-500/30"></div>
+        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-rotate-slow bg-gradient-to-br from-pink-500/10 to-blue-500/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <Badge className="mb-6 text-sm px-6 py-3 animate-scale-in glass-effect border-primary/50">
-              ✨ Надежность • Качество • Опыт
+            <Badge className="mb-8 text-sm px-8 py-4 animate-scale-in glass-effect border-primary/50 shadow-2xl hover:scale-105 transition-all cursor-default">
+              <Icon name="Sparkles" className="mr-2 animate-pulse" size={16} />
+              Надежность • Качество • Опыт
+              <Icon name="Sparkles" className="ml-2 animate-pulse" size={16} />
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in">
               Строим будущее
-              <span className="block text-gradient mt-2 animate-slide-up">вместе с вами</span>
+              <span className="block text-gradient mt-4 animate-slide-up animate-glow">вместе с вами</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up font-medium" style={{animationDelay: '0.2s'}}>
               Полный цикл строительных работ от проектирования до сдачи объекта. 
-              25 лет опыта и более 500 успешных проектов.
+              <span className="text-primary font-bold">25 лет опыта</span> и более <span className="text-primary font-bold">500 успешных проектов</span>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <Button size="lg" className="text-lg px-8 py-6 gradient-primary hover:scale-110 transition-all shadow-lg hover:shadow-2xl group">
-                <Icon name="MessageCircle" className="mr-2 group-hover:rotate-12 transition-transform" size={20} />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <Button size="lg" className="text-lg px-10 py-7 gradient-primary hover:scale-110 transition-all shadow-2xl hover:shadow-purple-500/50 group animate-glow">
+                <Icon name="MessageCircle" className="mr-3 group-hover:rotate-12 transition-transform" size={24} />
                 Обсудить проект
+                <Icon name="ArrowRight" className="ml-3 group-hover:translate-x-2 transition-transform" size={20} />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-110 transition-all border-2 border-primary/50 hover:bg-primary/10 group">
-                <Icon name="FileText" className="mr-2 group-hover:scale-110 transition-transform" size={20} />
+              <Button size="lg" variant="outline" className="text-lg px-10 py-7 hover:scale-110 transition-all border-2 border-primary/50 hover:bg-primary/10 group backdrop-blur-sm">
+                <Icon name="FileText" className="mr-3 group-hover:scale-110 transition-transform" size={24} />
                 Наши услуги
               </Button>
             </div>
@@ -137,21 +140,25 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      <section className="py-20 relative overflow-hidden gradient-primary">
+      <section className="py-24 relative overflow-hidden gradient-primary">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-bounce-slow"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-bounce-slow" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center animate-scale-in group"
+                className="text-center animate-scale-in group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">{stat.value}</div>
-                <div className="text-sm md:text-base text-white/90">{stat.label}</div>
+                <div className="relative inline-block mb-4">
+                  <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-125 transition-all duration-500">{stat.value}</div>
+                  <div className="absolute inset-0 blur-xl bg-white/50 group-hover:bg-white/80 transition-all"></div>
+                </div>
+                <div className="text-base md:text-lg text-white/95 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

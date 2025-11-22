@@ -16,18 +16,30 @@ export default function Footer() {
               Строительная компания полного цикла
             </p>
             <div className="flex gap-3">
-              <a href="https://vk.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
-                <Icon name="MessageCircle" size={20} />
+              <a 
+                href="https://t.me/+QgiLIa1gFRY4Y2Iy" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="relative w-12 h-12 gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-lg hover:shadow-2xl group animate-glow"
+              >
+                <Icon name="Send" size={22} className="text-white group-hover:rotate-12 transition-transform" />
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse border-2 border-secondary"></span>
               </a>
-              <a href="https://t.me" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
-                <Icon name="Send" size={20} />
+              <a href="https://vk.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary transition-all hover:scale-110 shadow-lg">
+                <Icon name="MessageCircle" size={22} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
-                <Icon name="Youtube" size={20} />
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary transition-all hover:scale-110 shadow-lg">
+                <Icon name="Youtube" size={22} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-all hover:scale-110">
-                <Icon name="Instagram" size={20} />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary transition-all hover:scale-110 shadow-lg">
+                <Icon name="Instagram" size={22} />
               </a>
+            </div>
+            <div className="mt-4 p-3 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10">
+              <div className="flex items-center gap-2 text-sm">
+                <Icon name="Users" size={16} className="text-primary" />
+                <span className="text-gray-300">Присоединяйтесь к нашему Telegram-каналу!</span>
+              </div>
             </div>
           </div>
 
