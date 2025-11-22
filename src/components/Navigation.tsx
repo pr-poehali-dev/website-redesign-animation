@@ -39,11 +39,11 @@ export default function Navigation() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect shadow-lg border-b border-primary/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg shadow-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-lg">
               <span className="text-2xl font-bold text-white">НТМ</span>
             </div>
             <div className="hidden md:block">
@@ -59,8 +59,8 @@ export default function Navigation() {
                 to={item.path}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105 ${
                   location.pathname === item.path
-                    ? 'text-white gradient-primary shadow-md'
-                    : 'text-secondary hover:bg-primary/10 hover:text-primary'
+                    ? 'text-white bg-primary shadow-md'
+                    : 'text-foreground hover:bg-primary/10 hover:text-primary'
                 }`}
               >
                 {item.name}
@@ -91,7 +91,7 @@ export default function Navigation() {
               </Button>
             </a>
 
-            <Button className="hidden md:flex gap-2 gradient-primary hover:scale-105 transition-all shadow-lg hover:shadow-xl group">
+            <Button className="hidden md:flex gap-2 bg-primary hover:bg-primary/90 hover:scale-105 transition-all shadow-lg hover:shadow-xl group">
               <Icon name="Phone" size={18} className="group-hover:rotate-12 transition-transform" />
               <span>Связаться</span>
             </Button>
@@ -112,7 +112,7 @@ export default function Navigation() {
                       className={`px-4 py-3 rounded-lg text-base font-medium transition-all hover:bg-primary/10 hover:text-primary ${
                         location.pathname === item.path
                           ? 'text-primary bg-primary/10'
-                          : 'text-secondary'
+                          : 'text-foreground'
                       }`}
                     >
                       {item.name}

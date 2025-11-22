@@ -91,8 +91,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			boxShadow: {
-				'glow-coffee': '0 0 25px rgba(217, 164, 109, 0.5), 0 0 50px rgba(217, 164, 109, 0.3), 0 0 75px rgba(217, 164, 109, 0.2)',
-				'glow-amber': '0 0 20px rgba(242, 201, 76, 0.5), 0 0 40px rgba(242, 201, 76, 0.3)',
+				'glow-blue': '0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(59, 130, 246, 0.3), 0 0 75px rgba(59, 130, 246, 0.2)',
+				'glow-green': '0 0 20px rgba(34, 197, 94, 0.5), 0 0 40px rgba(34, 197, 94, 0.3)',
 			}
 		}
 	},

@@ -107,17 +107,17 @@ export default function Index() {
       <Navigation />
 
       <section className="relative pt-32 pb-20 overflow-hidden mesh-gradient">
-        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-orange-500/20 to-yellow-500/20"></div>
-        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-slate-600/15 to-blue-600/15"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-rotate-slow bg-gradient-to-br from-amber-500/10 to-orange-600/10"></div>
+        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-blue-500/15 to-cyan-500/15"></div>
+        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-green-500/10 to-emerald-600/10"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-rotate-slow bg-gradient-to-br from-blue-400/8 to-green-500/8"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <Badge className="mb-8 text-sm px-8 py-4 animate-scale-in glass-effect border-primary/50 shadow-2xl hover:scale-105 transition-all cursor-default bg-gradient-to-r from-orange-50 to-amber-50">
+            <Badge className="mb-8 text-sm px-8 py-4 animate-scale-in glass-effect border-primary/30 shadow-xl hover:scale-105 transition-all cursor-default bg-white/80">
               <Icon name="HardHat" className="mr-2 text-primary" size={18} />
               Профессиональное строительство с 1999 года
               <Icon name="Award" className="ml-2 text-primary" size={18} />
             </Badge>
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in text-secondary">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in text-foreground">
               Строим объекты
               <span className="block text-gradient mt-4 animate-slide-up">любой сложности</span>
             </h1>
@@ -128,7 +128,7 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in" style={{animationDelay: '0.4s'}}>
               <Button 
                 size="lg" 
-                className="text-lg px-10 py-7 gradient-primary hover:scale-110 transition-all shadow-2xl hover:shadow-orange-500/50 group animate-glow"
+                className="text-lg px-10 py-7 bg-primary hover:bg-primary/90 hover:scale-110 transition-all shadow-2xl hover:shadow-blue-500/50 group"
                 onClick={() => navigate('/contacts')}
               >
                 <Icon name="Phone" className="mr-3 group-hover:rotate-12 transition-transform" size={24} />
@@ -138,7 +138,7 @@ export default function Index() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-10 py-7 hover:scale-110 transition-all border-2 border-primary/50 hover:bg-primary/10 group backdrop-blur-sm"
+                className="text-lg px-10 py-7 hover:scale-110 transition-all border-2 border-primary/30 hover:bg-primary/5 group backdrop-blur-sm"
                 onClick={() => navigate('/services')}
               >
                 <Icon name="Briefcase" className="mr-3 group-hover:scale-110 transition-transform" size={24} />
@@ -151,7 +151,7 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      <section className="py-24 relative overflow-hidden gradient-primary">
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-primary to-accent">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-bounce-slow"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-bounce-slow" style={{animationDelay: '1.5s'}}></div>
@@ -179,8 +179,8 @@ export default function Index() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <Badge variant="outline" className="mb-4">Наши услуги</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            <Badge variant="outline" className="mb-4 bg-white/80">Наши услуги</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Что мы предлагаем
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -192,11 +192,11 @@ export default function Index() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer animate-scale-in border-2 border-transparent hover:border-primary/30 relative overflow-hidden"
+                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer animate-scale-in border border-border hover:border-primary/40 relative overflow-hidden bg-white"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => navigate('/services')}
               >
-                <div className="absolute inset-0 gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <CardHeader className="relative">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                     <Icon name={service.icon as any} size={32} className="text-primary group-hover:text-white transition-colors" />
@@ -219,8 +219,8 @@ export default function Index() {
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <Badge variant="outline" className="mb-4">Портфолио</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            <Badge variant="outline" className="mb-4 bg-white/80">Портфолио</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Реализованные проекты
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -232,11 +232,11 @@ export default function Index() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="overflow-hidden group hover:shadow-2xl transition-all duration-500 cursor-pointer animate-slide-up border-2 border-transparent hover:border-primary/20 relative"
+                className="overflow-hidden group hover:shadow-2xl transition-all duration-500 cursor-pointer animate-slide-up border border-border hover:border-primary/40 relative bg-white"
                 style={{ animationDelay: `${index * 0.15}s` }}
                 onClick={() => navigate('/projects')}
               >
-                <div className="h-64 gradient-primary relative flex items-center justify-center overflow-hidden">
+                <div className="h-64 bg-gradient-to-br from-primary to-accent relative flex items-center justify-center overflow-hidden">
                   <div className="absolute inset-0 bg-black/20"></div>
                   <Icon name="Building" size={80} className="text-white/40 group-hover:scale-125 group-hover:rotate-3 transition-all duration-700 relative z-10" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
@@ -270,8 +270,8 @@ export default function Index() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <Badge variant="outline" className="mb-4">Отзывы</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            <Badge variant="outline" className="mb-4 bg-white/80">Отзывы</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Что говорят клиенты
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -283,7 +283,7 @@ export default function Index() {
             {reviews.map((review, index) => (
               <Card
                 key={index}
-                className="hover:shadow-xl transition-all duration-300 animate-fade-in"
+                className="hover:shadow-xl transition-all duration-300 animate-fade-in bg-white border border-border hover:border-primary/40"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>
