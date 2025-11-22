@@ -16,6 +16,16 @@ import Partners from "./pages/Partners";
 import Gallery from "./pages/Gallery";
 import Reviews from "./pages/Reviews";
 import Contacts from "./pages/Contacts";
+import Materials from "./pages/Materials";
+import Technologies from "./pages/Technologies";
+import Equipment from "./pages/Equipment";
+import Safety from "./pages/Safety";
+import Clients from "./pages/Clients";
+import Careers from "./pages/Careers";
+import Blog from "./pages/Blog";
+import FAQ from "./pages/FAQ";
+import Sustainability from "./pages/Sustainability";
+import Innovations from "./pages/Innovations";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +49,16 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/materials" element={<Materials />} />
+          <Route path="/technologies" element={<Technologies />} />
+          <Route path="/equipment" element={<Equipment />} />
+          <Route path="/safety" element={<Safety />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/innovations" element={<Innovations />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
