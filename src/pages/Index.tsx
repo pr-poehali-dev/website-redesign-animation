@@ -107,28 +107,28 @@ export default function Index() {
       <Navigation />
 
       <section className="relative pt-32 pb-20 overflow-hidden mesh-gradient">
-        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-blue-500/15 to-cyan-500/15"></div>
-        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-green-500/10 to-emerald-600/10"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-rotate-slow bg-gradient-to-br from-blue-400/8 to-green-500/8"></div>
+        <div className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl animate-pulse-glow bg-gradient-to-br from-primary/20 to-accent/20"></div>
+        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float bg-gradient-to-br from-accent/15 to-primary/15"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-spin-slow bg-gradient-to-br from-primary/10 to-accent/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <Badge className="mb-8 text-sm px-8 py-4 animate-scale-in glass-effect border-primary/30 shadow-xl hover:scale-105 transition-all cursor-default bg-white/80">
+            <Badge className="mb-8 text-sm px-8 py-4 animate-zoom-in glass-effect border-primary/40 shadow-2xl hover:scale-105 transition-all cursor-default bg-card/80 backdrop-blur-xl">
               <Icon name="HardHat" className="mr-2 text-primary" size={18} />
               Профессиональное строительство с 1999 года
-              <Icon name="Award" className="ml-2 text-primary" size={18} />
+              <Icon name="Award" className="ml-2 text-accent" size={18} />
             </Badge>
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in text-foreground">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-blur-in text-foreground">
               Строим объекты
-              <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-4 animate-slide-up">любой сложности</span>
+              <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mt-4 animate-slide-up">любой сложности</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/70 mb-12 max-w-2xl mx-auto animate-slide-up font-medium" style={{animationDelay: '0.2s'}}>
               Полный цикл строительных работ от проектирования до сдачи объекта. 
               <span className="text-primary font-bold">25 лет опыта</span> и более <span className="text-primary font-bold">500 успешных проектов</span>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in" style={{animationDelay: '0.4s'}}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-zoom-in" style={{animationDelay: '0.4s'}}>
               <Button 
                 size="lg" 
-                className="text-lg px-10 py-7 bg-primary hover:bg-primary/90 hover:scale-110 transition-all shadow-2xl hover:shadow-blue-500/50 group"
+                className="text-lg px-10 py-7 bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-primary/50 group"
                 onClick={() => navigate('/contacts')}
               >
                 <Icon name="Phone" className="mr-3 group-hover:rotate-12 transition-transform" size={24} />
@@ -138,7 +138,7 @@ export default function Index() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-10 py-7 hover:scale-110 transition-all border-2 border-primary/30 hover:bg-primary/5 group backdrop-blur-sm"
+                className="text-lg px-10 py-7 hover:scale-110 transition-all duration-500 border-2 border-primary/50 hover:bg-primary/10 hover:border-accent group backdrop-blur-sm"
                 onClick={() => navigate('/services')}
               >
                 <Icon name="Briefcase" className="mr-3 group-hover:scale-110 transition-transform" size={24} />
@@ -151,23 +151,23 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-primary to-accent">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-bounce-slow"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-bounce-slow" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-primary via-accent to-primary">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-foreground rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-foreground rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-foreground rounded-full blur-3xl animate-spin-slow"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center animate-scale-in group cursor-pointer"
+                className="text-center animate-zoom-in group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative inline-block mb-4">
-                  <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-125 transition-all duration-500">{stat.value}</div>
-                  <div className="absolute inset-0 blur-xl bg-white/50 group-hover:bg-white/80 transition-all"></div>
+                  <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-125 group-hover:rotate-3 transition-all duration-700">{stat.value}</div>
+                  <div className="absolute inset-0 blur-2xl bg-white/60 group-hover:bg-white/90 transition-all duration-700"></div>
                 </div>
                 <div className="text-base md:text-lg text-white/95 font-medium">{stat.label}</div>
               </div>
@@ -178,8 +178,8 @@ export default function Index() {
 
       <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge variant="outline" className="mb-4 bg-white/80">Наши услуги</Badge>
+          <div className="text-center mb-16 animate-blur-in">
+            <Badge variant="outline" className="mb-4 bg-card/80 border-primary/30 backdrop-blur-sm">Наши услуги</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Что мы предлагаем
             </h2>
@@ -192,22 +192,22 @@ export default function Index() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer animate-scale-in border border-border hover:border-primary/40 relative overflow-hidden bg-white"
+                className="group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-700 hover:-translate-y-3 hover:rotate-1 cursor-pointer animate-zoom-in border border-border hover:border-primary/60 relative overflow-hidden bg-card/90 backdrop-blur-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => navigate('/services')}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <CardHeader className="relative">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                    <Icon name={service.icon as any} size={32} className="text-primary group-hover:text-white transition-colors" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-accent group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-lg group-hover:shadow-primary/50">
+                    <Icon name={service.icon as any} size={32} className="text-primary group-hover:text-white transition-all duration-700" />
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-primary transition-all duration-500">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="relative">
-                  <p className="text-muted-foreground group-hover:text-foreground transition-colors">{service.description}</p>
-                  <div className="mt-4 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p className="text-muted-foreground group-hover:text-foreground transition-all duration-500">{service.description}</p>
+                  <div className="mt-4 flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <span className="text-sm font-semibold">Подробнее</span>
-                    <Icon name="ArrowRight" size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <Icon name="ArrowRight" size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
                   </div>
                 </CardContent>
               </Card>
@@ -216,10 +216,10 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge variant="outline" className="mb-4 bg-white/80">Портфолио</Badge>
+          <div className="text-center mb-16 animate-blur-in">
+            <Badge variant="outline" className="mb-4 bg-card/80 border-primary/30 backdrop-blur-sm">Портфолио</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Реализованные проекты
             </h2>
@@ -232,14 +232,14 @@ export default function Index() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="overflow-hidden group hover:shadow-2xl transition-all duration-500 cursor-pointer animate-slide-up border border-border hover:border-primary/40 relative bg-white"
+                className="overflow-hidden group hover:shadow-2xl hover:shadow-primary/30 transition-all duration-700 cursor-pointer animate-slide-up-smooth border border-border hover:border-accent/60 relative bg-card/90 backdrop-blur-sm hover:scale-105"
                 style={{ animationDelay: `${index * 0.15}s` }}
                 onClick={() => navigate('/projects')}
               >
-                <div className="h-64 bg-gradient-to-br from-primary to-accent relative flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <Icon name="Building" size={80} className="text-white/40 group-hover:scale-125 group-hover:rotate-3 transition-all duration-700 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
+                <div className="h-64 bg-gradient-to-br from-primary via-accent to-primary relative flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-black/30"></div>
+                  <Icon name="Building" size={80} className="text-white/50 group-hover:scale-150 group-hover:rotate-12 transition-all duration-1000 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent"></div>
                 </div>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
